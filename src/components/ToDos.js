@@ -9,7 +9,6 @@ const ToDos = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setList([...list, value]);
-    setValue("");
   };
   const handleDelete = (item) => {
     let newList = list.filter((ite) => ite !== item);
@@ -17,7 +16,12 @@ const ToDos = () => {
   };
   return (
     <div>
-      <input type="text " placeholder="add to do" onChange={changeHandler} />
+      <input
+        type="text "
+        value={value}
+        placeholder="add to do"
+        onChange={changeHandler}
+      />
       <button type="button" onClick={submitHandler}>
         Add
       </button>
